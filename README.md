@@ -1,10 +1,8 @@
 # İncehesap Karar Destek Sistemi (DSS)
 
-Profesyonel bir Karar Destek Sistemi - "Karar vericinin yerine karar vermeyen", karar vermesini kolaylaştıran sistem.
-
 ## 🎯 Amaç
 
-Sistem **otomatik karar** üretmez. **Öneri / içgörü / risk / senaryo** sunar. Her önerinin yanında:
+Sistem otomatik karar üretmez. Öneri / içgörü / risk / senaryo sunar. Her önerinin yanında:
 - Dayanak metrikler
 - Varsayımlar
 - Hesaplama yöntemi
@@ -48,45 +46,6 @@ Sistem **otomatik karar** üretmez. **Öneri / içgörü / risk / senaryo** suna
 - ✅ Türkçe metinler ve etiketler
 - ✅ Responsive tasarım
 
-## 🚀 Kurulum
-
-### Gereksinimler
-
-- Node.js 18+
-- npm 9+
-
-### Hızlı Başlangıç
-
-1. **Bağımlılıkları yükleyin:**
-
-```bash
-npm install
-```
-
-2. **Geliştirme modunda çalıştırın:**
-
-```bash
-npm run dev
-```
-
-Bu komut şunları yapacak:
-- Backend API'yi başlatacak (http://localhost:3001)
-- Frontend'i başlatacak (http://localhost:3000)
-
-3. **Tarayıcıda açın:**
-
-- Frontend: http://localhost:3000/overview
-- Backend API: http://localhost:3001/api/health
-
-### Ayrı Çalıştırma
-
-```bash
-# Sadece frontend
-npm run dev:fe
-
-# Sadece backend
-npm run dev:be
-```
 
 ## 📁 Proje Yapısı
 
@@ -139,33 +98,5 @@ npm run dev:be
 ### Stok Sağlık Durumu
 - `GET /api/stock-health?start=&end=&category_id=&brand_id=&warehouse_id=&status=`
 
-## 📊 Mock Verileri
-
-Mock data generator şunları oluşturur:
-- 10 kategori
-- 20 marka
-- 500 ürün
-- 2 depo
-- 12 aylık sipariş verisi (her ay ~30 gün, toplam ~360 gün)
-- Stok seviyeleri ve hareketleri
-- Kampanya verileri (en az 3 kampanya)
-
-## 📝 Notlar
-
-- İlk etapta **Auth yok** (sonra eklenebilir)
-- **MySQL şimdilik bağlanmıyor** (mock data kullanılıyor)
-- Tüm hesaplamalar backend'de yapılıyor
-- Frontend sadece render ediyor
-- Hata yönetimi: boş veri, filtre, tarih aralığı edge-case'leri ele alınıyor
-- Backend çalışmıyorsa frontend otomatik olarak local mock kullanır
-
-## 🔄 Sonraki Adımlar
-
-- [ ] MySQL bağlantısı
-- [ ] Authentication & Authorization
-- [ ] Gelişmiş filtreleme
-- [ ] Daha fazla içgörü ve analiz
-
-## 📄 Lisans
 
 Bu proje İncehesap için geliştirilmiştir.
