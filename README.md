@@ -4,7 +4,7 @@ Profesyonel bir Karar Destek Sistemi - "Karar vericinin yerine karar vermeyen", 
 
 ## 🎯 Amaç
 
-Sistem **otomatik karar** üretmez. **Öneri / içgörü / risk / senaryo** sunar. Her önerinin yanında:
+Sistem otomatik karar üretmez. Öneri / içgörü / risk / senaryo sunar. Her önerinin yanında:
 - Dayanak metrikler
 - Varsayımlar
 - Hesaplama yöntemi
@@ -48,45 +48,6 @@ Sistem **otomatik karar** üretmez. **Öneri / içgörü / risk / senaryo** suna
 - ✅ Türkçe metinler ve etiketler
 - ✅ Responsive tasarım
 
-## 🚀 Kurulum
-
-### Gereksinimler
-
-- Node.js 18+
-- npm 9+
-
-### Hızlı Başlangıç
-
-1. **Bağımlılıkları yükleyin:**
-
-```bash
-npm install
-```
-
-2. **Geliştirme modunda çalıştırın:**
-
-```bash
-npm run dev
-```
-
-Bu komut şunları yapacak:
-- Backend API'yi başlatacak (http://localhost:3001)
-- Frontend'i başlatacak (http://localhost:3000)
-
-3. **Tarayıcıda açın:**
-
-- Frontend: http://localhost:3000/overview
-- Backend API: http://localhost:3001/api/health
-
-### Ayrı Çalıştırma
-
-```bash
-# Sadece frontend
-npm run dev:fe
-
-# Sadece backend
-npm run dev:be
-```
 
 ## 📁 Proje Yapısı
 
