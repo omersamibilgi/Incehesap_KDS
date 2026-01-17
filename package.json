@@ -1,0 +1,27 @@
+{
+  "name": "incehesap-dss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "İncehesap Karar Destek Sistemi - DSS",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:be\" \"npm run dev:fe\"",
+    "dev:fe": "npm run dev --workspace=frontend",
+    "dev:be": "npm run dev --workspace=backend",
+    "install:all": "npm install",
+    "build": "npm run build --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
+
+
+

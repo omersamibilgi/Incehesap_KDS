@@ -1,0 +1,171 @@
+# İncehesap Karar Destek Sistemi (DSS)
+
+Profesyonel bir Karar Destek Sistemi - "Karar vericinin yerine karar vermeyen", karar vermesini kolaylaştıran sistem.
+
+## 🎯 Amaç
+
+Sistem **otomatik karar** üretmez. **Öneri / içgörü / risk / senaryo** sunar. Her önerinin yanında:
+- Dayanak metrikler
+- Varsayımlar
+- Hesaplama yöntemi
+- "Neden bu öneri?" açıklaması
+
+## 🛠️ Teknoloji Stack
+
+- **Frontend**: Next.js (App Router) + TypeScript + Tailwind CSS
+- **Backend**: Node.js (Express) + TypeScript
+- **Grafikler**: Recharts
+- **State Management**: Zustand
+- **Timezone**: Europe/Istanbul
+- **Para Birimi**: TRY
+- **Tarih Formatı**: TR
+
+## 📋 Özellikler
+
+### Modüller
+
+1. **Overview (Yönetici Özeti)** ✅
+   - KPI kartları (Ciro, Kâr, Marj, Stok metrikleri)
+   - Günlük ciro trendi (Line chart)
+   - Kategori bazlı ciro dağılımı (Bar chart)
+   - Marka bazlı stok sermayesi (Donut chart)
+   - İçgörü kutusu
+   - Her grafik için "Bilgi Kartı" (Drawer)
+   - Her grafik için "Odak Modu" (Tam ekran)
+
+2. **Inventory (Stok Takip)** ✅
+   - Stok seviyesi tablosu
+   - Durum etiketleri (Kritik, Düşük, Normal, Fazla, Ölü stok)
+   - Arama, sıralama, sayfalama
+   - CSV export
+
+### UI Özellikleri
+
+- ✅ Sol menü navigasyon (Sidebar)
+- ✅ Üstte global filtre barı (Tarih, Kategori, Marka, Depo, Durum, Kampanya)
+- ✅ Her grafik için "Bilgi Kartı" (Drawer)
+- ✅ Her grafik için "Odak Modu" (Tam ekran görünüm)
+- ✅ Türkçe metinler ve etiketler
+- ✅ Responsive tasarım
+
+## 🚀 Kurulum
+
+### Gereksinimler
+
+- Node.js 18+
+- npm 9+
+
+### Hızlı Başlangıç
+
+1. **Bağımlılıkları yükleyin:**
+
+```bash
+npm install
+```
+
+2. **Geliştirme modunda çalıştırın:**
+
+```bash
+npm run dev
+```
+
+Bu komut şunları yapacak:
+- Backend API'yi başlatacak (http://localhost:3001)
+- Frontend'i başlatacak (http://localhost:3000)
+
+3. **Tarayıcıda açın:**
+
+- Frontend: http://localhost:3000/overview
+- Backend API: http://localhost:3001/api/health
+
+### Ayrı Çalıştırma
+
+```bash
+# Sadece frontend
+npm run dev:fe
+
+# Sadece backend
+npm run dev:be
+```
+
+## 📁 Proje Yapısı
+
+```
+.
+├── package.json              # Root workspace config
+├── README.md
+├── frontend/                 # Frontend (Next.js)
+│   ├── app/
+│   │   ├── overview/         # Yönetici Özeti sayfası
+│   │   ├── inventory/        # Stok Takip sayfası
+│   │   └── layout.tsx
+│   ├── components/
+│   │   ├── layout/           # Sidebar, TopFilterBar
+│   │   └── common/           # Drawer, InfoCard, ChartCard, FocusMode
+│   ├── lib/
+│   │   ├── api.ts            # Data access layer
+│   │   ├── mock/             # Mock data generator
+│   │   └── format.ts         # Formatting utilities
+│   └── package.json
+└── backend/                  # Backend (Express)
+    ├── src/
+    │   ├── index.ts          # Express server
+    │   ├── routes/            # API routes
+    │   └── data/
+    │       └── mockData.ts   # Mock data (shared logic)
+    └── package.json
+```
+
+## 🔌 API Endpoints
+
+### Health
+- `GET /api/health` - Sağlık kontrolü
+
+### KPI'lar
+- `GET /api/kpis?start=YYYY-MM-DD&end=YYYY-MM-DD&category_id=&brand_id=&warehouse_id=&is_active=&campaign_id=`
+
+### Ciro Trendi
+- `GET /api/revenue-trend?start=&end=&groupBy=day|week|month&category_id=&brand_id=`
+
+### Kategori Bazlı Ciro
+- `GET /api/revenue-by-category?start=&end=&category_id=`
+
+### Marka Bazlı Stok Sermayesi
+- `GET /api/brand-stock-share?start=&end=&brand_id=`
+
+### İçgörüler
+- `GET /api/insights/overview?start=&end=`
+
+### Stok Sağlık Durumu
+- `GET /api/stock-health?start=&end=&category_id=&brand_id=&warehouse_id=&status=`
+
+## 📊 Mock Verileri
+
+Mock data generator şunları oluşturur:
+- 10 kategori
+- 20 marka
+- 500 ürün
+- 2 depo
+- 12 aylık sipariş verisi (her ay ~30 gün, toplam ~360 gün)
+- Stok seviyeleri ve hareketleri
+- Kampanya verileri (en az 3 kampanya)
+
+## 📝 Notlar
+
+- İlk etapta **Auth yok** (sonra eklenebilir)
+- **MySQL şimdilik bağlanmıyor** (mock data kullanılıyor)
+- Tüm hesaplamalar backend'de yapılıyor
+- Frontend sadece render ediyor
+- Hata yönetimi: boş veri, filtre, tarih aralığı edge-case'leri ele alınıyor
+- Backend çalışmıyorsa frontend otomatik olarak local mock kullanır
+
+## 🔄 Sonraki Adımlar
+
+- [ ] MySQL bağlantısı
+- [ ] Authentication & Authorization
+- [ ] Gelişmiş filtreleme
+- [ ] Daha fazla içgörü ve analiz
+
+## 📄 Lisans
+
+Bu proje İncehesap için geliştirilmiştir.
