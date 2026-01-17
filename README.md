@@ -139,33 +139,6 @@ npm run dev:be
 ### Stok Sağlık Durumu
 - `GET /api/stock-health?start=&end=&category_id=&brand_id=&warehouse_id=&status=`
 
-## 📊 Mock Verileri
 
-Mock data generator şunları oluşturur:
-- 10 kategori
-- 20 marka
-- 500 ürün
-- 2 depo
-- 12 aylık sipariş verisi (her ay ~30 gün, toplam ~360 gün)
-- Stok seviyeleri ve hareketleri
-- Kampanya verileri (en az 3 kampanya)
-
-## 📝 Notlar
-
-- İlk etapta **Auth yok** (sonra eklenebilir)
-- **MySQL şimdilik bağlanmıyor** (mock data kullanılıyor)
-- Tüm hesaplamalar backend'de yapılıyor
-- Frontend sadece render ediyor
-- Hata yönetimi: boş veri, filtre, tarih aralığı edge-case'leri ele alınıyor
-- Backend çalışmıyorsa frontend otomatik olarak local mock kullanır
-
-## 🔄 Sonraki Adımlar
-
-- [ ] MySQL bağlantısı
-- [ ] Authentication & Authorization
-- [ ] Gelişmiş filtreleme
-- [ ] Daha fazla içgörü ve analiz
-
-## 📄 Lisans
 
 Bu proje İncehesap için geliştirilmiştir.
